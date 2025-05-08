@@ -434,9 +434,7 @@ body::before {
   width: 100%;
   display: flex;
   flex-direction: column;
-  /* align-items: stretch; */
   justify-content: space-between;
-  /* height: 100%; */
 }
 
 .skills-title {
@@ -444,7 +442,7 @@ body::before {
   font-weight: 700;
   color: #fff;
   text-align: center;
-  margin: 0 0 3.5rem 0;
+  margin: 5rem 0 3.5rem 0;
   letter-spacing: -0.02em;
   opacity: 0;
   transform: translateY(60px) scale(0.95);

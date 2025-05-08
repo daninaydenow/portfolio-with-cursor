@@ -188,7 +188,7 @@ const App: React.FC = () => {
               </a>
               <div>
                 <h3>JS</h3>
-                <p>It goes without saying, web's holly trinity - 4 years of experience.</p>
+                <p>It goes without saying - member of web's holly trinity - 4 years of experience.</p>
               </div>
             </li>
             <li className={`skill-item${cardVisible[4] ? ' visible' : ''}`} ref={el => { cardRefs.current[4] = el; }}>
@@ -197,7 +197,7 @@ const App: React.FC = () => {
               </a>
               <div>
                 <h3>HTML</h3>
-                <p>It goes without saying, web's holly trinity - 4 years of experience.</p>
+                <p>It goes without saying - member of web's holly trinity - 4 years of experience.</p>
               </div>
             </li>
             <li className={`skill-item${cardVisible[5] ? ' visible' : ''}`} ref={el => { cardRefs.current[5] = el; }}>
@@ -206,7 +206,7 @@ const App: React.FC = () => {
               </a>
               <div>
                 <h3>CSS</h3>
-                <p>It goes without saying, web's holly trinity - 4 years of experience.</p>
+                <p>It goes without saying - member of web's holly trinity - 4 years of experience.</p>
               </div>
             </li>
             <li className={`skill-item${cardVisible[6] ? ' visible' : ''}`} ref={el => { cardRefs.current[6] = el; }}>
