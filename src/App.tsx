@@ -5,6 +5,7 @@ import TechStack from './components/TechStack';
 const App: React.FC = () => {
   const skillsTitleRef = useRef<HTMLHeadingElement>(null);
   const [skillsTitleVisible, setSkillsTitleVisible] = useState(false);
+  const [showAvatar, setShowAvatar] = useState(false);
   const aboutRef = useRef<HTMLElement>(null);
   const skillsRef = useRef<HTMLElement>(null);
 
@@ -24,6 +25,12 @@ const App: React.FC = () => {
         observer.unobserve(skillsTitleRef.current);
       }
     };
+  }, []);
+
+  // Show avatar after hero text animation
+  useEffect(() => {
+    const timeout = setTimeout(() => setShowAvatar(true), 1900);
+    return () => clearTimeout(timeout);
   }, []);
 
   // Update hash on scroll
@@ -69,7 +76,7 @@ const App: React.FC = () => {
       
       <section className="landing" id="about" ref={aboutRef}>
         <div className="landing-content">
-          <div className="avatar-container">
+          <div className={`avatar-container${showAvatar ? ' avatar-visible' : ''}`}>
             <img 
               src="/dani.jpg" 
               alt="Dani's portrait" 
