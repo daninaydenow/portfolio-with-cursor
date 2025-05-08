@@ -117,14 +117,28 @@ const App: React.FC = () => {
               </div>
             </li>
             <li className="skill-item">
-              <span className="skill-icon"><img src="/js.svg" alt="JS" style={{width: '28px', height: '28px'}} /><img src="/html-5.svg" alt="HTML" style={{width: '28px', height: '28px', marginLeft: '4px'}} /><img src="/css-3.svg" alt="CSS" style={{width: '28px', height: '28px', marginLeft: '4px'}} /></span>
+              <span className="skill-icon"><img src="/js.svg" alt="JS" style={{width: '28px', height: '28px'}} /></span>
               <div>
-                <h3>JS, HTML, CSS</h3>
+                <h3>JS</h3>
                 <p>It goes without saying, web's holly trinity - 4 years of experience.</p>
               </div>
             </li>
             <li className="skill-item">
-              <span className="skill-icon"><img src="/git.svg" alt="Git" style={{width: '28px', height: '28px'}} /><img src="/jira.svg" alt="Jira" style={{width: '28px', height: '28px', marginLeft: '4px'}} /></span>
+              <span className="skill-icon"><img src="/html-5.svg" alt="HTML" style={{width: '28px', height: '28px', marginLeft: '4px'}} /></span>
+              <div>
+                <h3>HTML</h3>
+                <p>It goes without saying, web's holly trinity - 4 years of experience.</p>
+              </div>
+            </li>
+            <li className="skill-item">
+              <span className="skill-icon"><img src="/css-3.svg" alt="CSS" style={{width: '28px', height: '28px', marginLeft: '4px'}} /></span>
+              <div>
+                <h3>CSS</h3>
+                <p>It goes without saying, web's holly trinity - 4 years of experience.</p>
+              </div>
+            </li>
+            <li className="skill-item">
+              <span className="skill-icon"><img src="/git.svg" alt="Git" style={{width: '28px', height: '28px'}} /></span>
               <div>
                 <h3>Git and Github/Bitbucket</h3>
                 <p>No version will remain uncontrolled - 4 years of experience.</p>
@@ -134,7 +148,14 @@ const App: React.FC = () => {
               <span className="skill-icon"><img src="/react.svg" alt="React" style={{width: '28px', height: '28px'}} /></span>
               <div>
                 <h3>React</h3>
-                <p>React - 3 years of react experience.<br/>This portfolio was built using react.</p>
+                <p>React - 3 years of react experience.This portfolio was built using react.</p>
+              </div>
+            </li>
+            <li className="skill-item">
+              <span className="skill-icon"><img src="/docker.svg" alt="Docker" style={{width: '28px', height: '28px'}} /></span>
+              <div>
+                <h3>Docker</h3>
+                <p>Package and deploy your application with ease - 4 years of experience.</p>
               </div>
             </li>
           </ul>
