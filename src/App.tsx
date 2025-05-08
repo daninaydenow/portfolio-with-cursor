@@ -8,8 +8,11 @@ const App: React.FC = () => {
   const [showAvatar, setShowAvatar] = useState(false);
   const aboutRef = useRef<HTMLElement>(null);
   const skillsRef = useRef<HTMLElement>(null);
+  const contactRef = useRef<HTMLElement>(null);
   const cardRefs = useRef<(HTMLLIElement | null)[]>([]);
   const [cardVisible, setCardVisible] = useState(Array(9).fill(false));
+  const socialLinkRefs = useRef<(HTMLAnchorElement | null)[]>([]);
+  const [socialLinksVisible, setSocialLinksVisible] = useState(Array(3).fill(false));
 
   // Animate skills title
   useEffect(() => {
@@ -35,11 +38,41 @@ const App: React.FC = () => {
     return () => clearTimeout(timeout);
   }, []);
 
+  // Animate social links on scroll
+  useEffect(() => {
+    const observer = new window.IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const index = socialLinkRefs.current.findIndex(ref => ref === entry.target);
+          if (index !== -1) {
+            setSocialLinksVisible(prev => {
+              const updated = [...prev];
+              updated[index] = entry.isIntersecting;
+              return updated;
+            });
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    socialLinkRefs.current.forEach(ref => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => {
+      socialLinkRefs.current.forEach(ref => {
+        if (ref) observer.unobserve(ref);
+      });
+    };
+  }, []);
+
   // Update hash on scroll
   useEffect(() => {
     const sections = [
       { ref: aboutRef, hash: '#about' },
       { ref: skillsRef, hash: '#skills' },
+      { ref: contactRef, hash: '#contact' },
     ];
     const handleScroll = () => {
       let found = false;
@@ -204,6 +237,53 @@ const App: React.FC = () => {
               </div>
             </li>
           </ul>
+        </div>
+      </section>
+
+      <section className="contact-section" id="contact" ref={contactRef}>
+        <div className="contact-content">
+          <h2 className="contact-title">Let's Connect!</h2>
+          <div className="social-links">
+            <a 
+              href="https://github.com/daninaydenow" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className={`social-link github${socialLinksVisible[0] ? ' visible' : ''}`}
+              ref={el => { socialLinkRefs.current[0] = el; }}
+            >
+              <div className="social-icon">
+                <img src="/github.svg" alt="GitHub" />
+              </div>
+              <h3>GitHub</h3>
+              <p>Check out my projects and contributions</p>
+            </a>
+            <a 
+              href="https://linkedin.com/in/daniel-naydenov-131a7321b" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className={`social-link linkedin${socialLinksVisible[1] ? ' visible' : ''}`}
+              ref={el => { socialLinkRefs.current[1] = el; }}
+            >
+              <div className="social-icon">
+                <img src="/linkedin.svg" alt="LinkedIn" />
+              </div>
+              <h3>LinkedIn</h3>
+              <p>Connect with me professionally</p>
+            </a>
+            <a 
+              href="https://discord.gg/egGqURzW" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className={`social-link discord${socialLinksVisible[2] ? ' visible' : ''}`}
+              ref={el => { socialLinkRefs.current[2] = el; }}
+            >
+              <div className="social-icon">
+                <img src="/discord.svg" alt="Discord" />
+              </div>
+              <h3>Discord</h3>
+              <p>Let's chat and collaborate</p>
+            </a>
+          </div>
         </div>
       </section>
     </div>
