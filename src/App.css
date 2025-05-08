@@ -491,9 +491,28 @@ body::before {
   border-radius: 1.2rem;
   padding: 0.7rem 1rem;
   box-shadow: 0 2px 24px 0 rgba(35,166,213,0.08);
-  transition: box-shadow 0.3s;
+  transition: box-shadow 0.3s, opacity 0.6s, transform 0.6s;
   min-height: 20px;
+  opacity: 0;
+  transform: translateY(40px);
 }
+
+.skill-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.6s cubic-bezier(0.4,0.2,0.2,1), transform 0.6s cubic-bezier(0.4,0.2,0.2,1);
+}
+
+.skill-item.visible:nth-child(1) { transition-delay: 0.05s; }
+.skill-item.visible:nth-child(2) { transition-delay: 0.15s; }
+.skill-item.visible:nth-child(3) { transition-delay: 0.25s; }
+.skill-item.visible:nth-child(4) { transition-delay: 0.35s; }
+.skill-item.visible:nth-child(5) { transition-delay: 0.45s; }
+.skill-item.visible:nth-child(6) { transition-delay: 0.55s; }
+.skill-item.visible:nth-child(7) { transition-delay: 0.65s; }
+.skill-item.visible:nth-child(8) { transition-delay: 0.75s; }
+.skill-item.visible:nth-child(9) { transition-delay: 0.85s; }
+.skill-item.visible:nth-child(10) { transition-delay: 0.95s; }
 
 .skill-item:hover {
   box-shadow: 0 4px 32px 0 rgba(35,166,213,0.18);
