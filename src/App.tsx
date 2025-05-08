@@ -123,63 +123,81 @@ const App: React.FC = () => {
           <h2 ref={skillsTitleRef} className={`skills-title${skillsTitleVisible ? ' visible' : ''}`}>Checkout my awesome skills!</h2>
           <ul className="skills-list">
             <li className={`skill-item${cardVisible[0] ? ' visible' : ''}`} ref={el => { cardRefs.current[0] = el; }}>
-              <span className="skill-icon"><img src="/Angular.svg" alt="Angular" /></span>
+              <a href="https://angular.dev" target="_blank" rel="noopener noreferrer" className="skill-link">
+                <span className="skill-icon"><img src="/Angular.svg" alt="Angular" /></span>
+              </a>
               <div>
                 <h3>Angular</h3>
                 <p>3 years of professional experience with version ranging from 7 to 17. Legacy or latest - I got you covered.</p>
               </div>
             </li>
             <li className={`skill-item${cardVisible[1] ? ' visible' : ''}`} ref={el => { cardRefs.current[1] = el; }}>
-              <span className="skill-icon"><img src="/material.png" alt="Angular Material" style={{width: '28px', height: '28px'}} /></span>
+              <a href="https://material.angular.io/" target="_blank" rel="noopener noreferrer" className="skill-link">
+                <span className="skill-icon"><img src="/material.png" alt="Angular Material" style={{width: '28px', height: '28px'}} /></span>
+              </a>
               <div>
                 <h3>Angular Material</h3>
                 <p>Angular's best friend. Same versioning range - 3 years of experience.</p>
               </div>
             </li>
             <li className={`skill-item${cardVisible[2] ? ' visible' : ''}`} ref={el => { cardRefs.current[2] = el; }}>
-              <span className="skill-icon"><img src="/rxjs.svg" alt="RxJs" style={{width: '28px', height: '28px'}} /></span>
+              <a href="https://rxjs.dev/guide/overview" target="_blank" rel="noopener noreferrer" className="skill-link">
+                <span className="skill-icon"><img src="/rxjs.svg" alt="RxJs" style={{width: '28px', height: '28px'}} /></span>
+              </a>
               <div>
                 <h3>RxJs</h3>
                 <p>The power of reactivity, in the palms of your hands - 3 years of experience.</p>
               </div>
             </li>
             <li className={`skill-item${cardVisible[3] ? ' visible' : ''}`} ref={el => { cardRefs.current[3] = el; }}>
-              <span className="skill-icon"><img src="/js.svg" alt="JS" style={{width: '28px', height: '28px'}} /></span>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer" className="skill-link">
+                <span className="skill-icon"><img src="/js.svg" alt="JS" style={{width: '28px', height: '28px'}} /></span>
+              </a>
               <div>
                 <h3>JS</h3>
                 <p>It goes without saying, web's holly trinity - 4 years of experience.</p>
               </div>
             </li>
             <li className={`skill-item${cardVisible[4] ? ' visible' : ''}`} ref={el => { cardRefs.current[4] = el; }}>
-              <span className="skill-icon"><img src="/html-5.svg" alt="HTML" style={{width: '28px', height: '28px', marginLeft: '4px'}} /></span>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noopener noreferrer" className="skill-link">
+                <span className="skill-icon"><img src="/html-5.svg" alt="HTML" style={{width: '28px', height: '28px', marginLeft: '4px'}} /></span>
+              </a>
               <div>
                 <h3>HTML</h3>
                 <p>It goes without saying, web's holly trinity - 4 years of experience.</p>
               </div>
             </li>
             <li className={`skill-item${cardVisible[5] ? ' visible' : ''}`} ref={el => { cardRefs.current[5] = el; }}>
-              <span className="skill-icon"><img src="/css-3.svg" alt="CSS" style={{width: '28px', height: '28px', marginLeft: '4px'}} /></span>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" rel="noopener noreferrer" className="skill-link">
+                <span className="skill-icon"><img src="/css-3.svg" alt="CSS" style={{width: '28px', height: '28px', marginLeft: '4px'}} /></span>
+              </a>
               <div>
                 <h3>CSS</h3>
                 <p>It goes without saying, web's holly trinity - 4 years of experience.</p>
               </div>
             </li>
             <li className={`skill-item${cardVisible[6] ? ' visible' : ''}`} ref={el => { cardRefs.current[6] = el; }}>
-              <span className="skill-icon"><img src="/git.svg" alt="Git" style={{width: '28px', height: '28px'}} /></span>
+              <a href="https://git-scm.com/doc" target="_blank" rel="noopener noreferrer" className="skill-link">
+                <span className="skill-icon"><img src="/git.svg" alt="Git" style={{width: '28px', height: '28px'}} /></span>
+              </a>
               <div>
                 <h3>Git and Github/Bitbucket</h3>
                 <p>No version will remain uncontrolled - 4 years of experience.</p>
               </div>
             </li>
             <li className={`skill-item${cardVisible[7] ? ' visible' : ''}`} ref={el => { cardRefs.current[7] = el; }}>
-              <span className="skill-icon"><img src="/react.svg" alt="React" style={{width: '28px', height: '28px'}} /></span>
+              <a href="https://react.dev/" target="_blank" rel="noopener noreferrer" className="skill-link">
+                <span className="skill-icon"><img src="/react.svg" alt="React" style={{width: '28px', height: '28px'}} /></span>
+              </a>
               <div>
                 <h3>React</h3>
                 <p>React - 3 years of react experience.This portfolio was built using react.</p>
               </div>
             </li>
             <li className={`skill-item${cardVisible[8] ? ' visible' : ''}`} ref={el => { cardRefs.current[8] = el; }}>
-              <span className="skill-icon"><img src="/docker.svg" alt="Docker" style={{width: '28px', height: '28px'}} /></span>
+              <a href="https://docs.docker.com/" target="_blank" rel="noopener noreferrer" className="skill-link">
+                <span className="skill-icon"><img src="/docker.svg" alt="Docker" style={{width: '28px', height: '28px'}} /></span>
+              </a>
               <div>
                 <h3>Docker</h3>
                 <p>Package and deploy your application with ease - 4 years of experience.</p>

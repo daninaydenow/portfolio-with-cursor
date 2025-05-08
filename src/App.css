@@ -542,6 +542,16 @@ body::before {
   font-size: 0.98rem;
 }
 
+.skill-link {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.skill-link:hover {
+  cursor: pointer;
+}
+
 @media (max-width: 1200px) {
   .skills-list {
     grid-template-columns: 1fr 1fr;
