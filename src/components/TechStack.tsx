@@ -23,6 +23,36 @@ const TechStack: React.FC = () => {
         alt="Material" 
         className="tech-icon material"
       />
+      <img 
+        src="/js.svg" 
+        alt="JavaScript" 
+        className="tech-icon js"
+      />
+      <img 
+        src="/html-5.svg" 
+        alt="HTML" 
+        className="tech-icon html"
+      />
+      <img 
+        src="/css-3.svg" 
+        alt="CSS" 
+        className="tech-icon css"
+      />
+      <img 
+        src="/docker.svg" 
+        alt="Docker" 
+        className="tech-icon docker"
+      />
+      <img 
+        src="/git.svg" 
+        alt="Git" 
+        className="tech-icon git"
+      />
+      <img 
+        src="/jira.svg" 
+        alt="Jira" 
+        className="tech-icon jira"
+      />
     </div>
   );
 };

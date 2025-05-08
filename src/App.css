@@ -95,7 +95,7 @@ body::before {
 .landing-content {
   display: flex;
   align-items: center;
-  gap: 4rem;
+  gap: 12rem;
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
@@ -230,31 +230,19 @@ body::before {
   transition: transform 0.3s, opacity 0.3s;
 }
 
-.tech-icon.angular {
-  top: 0;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(0deg) translateY(-20px);
-}
-.tech-icon.rxjs {
-  top: 50%;
-  right: 0;
-  transform: translate(50%, -50%) rotate(90deg) translateY(-20px);
-}
-.tech-icon.typescript {
-  bottom: 0;
-  left: 50%;
-  transform: translate(-50%, 50%) rotate(180deg) translateY(-20px);
-}
-.tech-icon.material {
-  top: 50%;
-  left: 0;
-  transform: translate(-50%, -50%) rotate(270deg) translateY(-20px);
-}
+.tech-icon.angular { top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(0deg) translateY(-200px); }
+.tech-icon.rxjs { top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(36deg) translateY(-200px); }
+.tech-icon.typescript { top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(72deg) translateY(-200px); }
+.tech-icon.material { top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(108deg) translateY(-200px); }
+.tech-icon.js { top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(144deg) translateY(-200px); }
+.tech-icon.html { top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(180deg) translateY(-200px); }
+.tech-icon.css { top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(216deg) translateY(-200px); }
+.tech-icon.docker { top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(252deg) translateY(-200px); }
+.tech-icon.git { top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(288deg) translateY(-200px); }
+.tech-icon.jira { top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(324deg) translateY(-200px); }
 
 .tech-icon:hover {
-  opacity: 1;
-  transform: scale(1.2) !important;
-  z-index: 10;
+  /* Remove all hover effects */
 }
 
 @keyframes rotate {
@@ -410,4 +398,15 @@ body::before {
     width: 24px;
     height: 24px;
   }
+
+  .tech-icon.angular { transform: translate(-50%, -50%) rotate(0deg) translateY(-115px); }
+  .tech-icon.rxjs { transform: translate(-50%, -50%) rotate(36deg) translateY(-115px); }
+  .tech-icon.typescript { transform: translate(-50%, -50%) rotate(72deg) translateY(-115px); }
+  .tech-icon.material { transform: translate(-50%, -50%) rotate(108deg) translateY(-115px); }
+  .tech-icon.js { transform: translate(-50%, -50%) rotate(144deg) translateY(-115px); }
+  .tech-icon.html { transform: translate(-50%, -50%) rotate(180deg) translateY(-115px); }
+  .tech-icon.css { transform: translate(-50%, -50%) rotate(216deg) translateY(-115px); }
+  .tech-icon.docker { transform: translate(-50%, -50%) rotate(252deg) translateY(-115px); }
+  .tech-icon.git { transform: translate(-50%, -50%) rotate(288deg) translateY(-115px); }
+  .tech-icon.jira { transform: translate(-50%, -50%) rotate(324deg) translateY(-115px); }
 }

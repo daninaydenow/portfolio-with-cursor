@@ -13,7 +13,7 @@ const App: React.FC = () => {
         </div>
       </nav>
       
-      <section className="landing">
+      <section className="landing" id="about">
         <div className="landing-content">
           <div className="avatar-container">
             <img 
@@ -24,8 +24,8 @@ const App: React.FC = () => {
             <TechStack />
           </div>
           <div className="intro-text">
-            <h1>I'm Dani</h1>
-            <p>A Senior FrontEnd Developer with a passion for style.</p>
+            <h1>Daniel Naydenov</h1>
+            <p>A Senior FrontEnd Developer with a passion for style. I would love to help you build your next project. Checkout my portfolio and let's talk!</p>
           </div>
         </div>
       </section>
