@@ -5,7 +5,10 @@ import TechStack from './components/TechStack';
 const App: React.FC = () => {
   const skillsTitleRef = useRef<HTMLHeadingElement>(null);
   const [skillsTitleVisible, setSkillsTitleVisible] = useState(false);
+  const aboutRef = useRef<HTMLElement>(null);
+  const skillsRef = useRef<HTMLElement>(null);
 
+  // Animate skills title
   useEffect(() => {
     const observer = new window.IntersectionObserver(
       ([entry]) => {
@@ -23,6 +26,37 @@ const App: React.FC = () => {
     };
   }, []);
 
+  // Update hash on scroll
+  useEffect(() => {
+    const sections = [
+      { ref: aboutRef, hash: '#about' },
+      { ref: skillsRef, hash: '#skills' },
+    ];
+    const handleScroll = () => {
+      let found = false;
+      for (const section of sections) {
+        const el = section.ref.current;
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= window.innerHeight / 2 && rect.bottom > window.innerHeight / 2) {
+            if (window.location.hash !== section.hash) {
+              window.history.replaceState(null, '', section.hash);
+            }
+            found = true;
+            break;
+          }
+        }
+      }
+      // If no section is found, clear the hash
+      if (!found && window.location.hash) {
+        window.history.replaceState(null, '', ' ');
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <div className="App">
       <nav className="navbar">
@@ -33,7 +67,7 @@ const App: React.FC = () => {
         </div>
       </nav>
       
-      <section className="landing" id="about">
+      <section className="landing" id="about" ref={aboutRef}>
         <div className="landing-content">
           <div className="avatar-container">
             <img 
@@ -50,7 +84,7 @@ const App: React.FC = () => {
         </div>
       </section>
 
-      <section className="skills-section" id="skills">
+      <section className="skills-section" id="skills" ref={skillsRef}>
         <div className="skills-content">
           <h2 ref={skillsTitleRef} className={`skills-title${skillsTitleVisible ? ' visible' : ''}`}>Checkout my awesome skills!</h2>
           <ul className="skills-list">
