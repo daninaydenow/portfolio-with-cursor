@@ -626,13 +626,22 @@ body::before {
   -webkit-backdrop-filter: blur(10px);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   opacity: 0;
-  transform: translateY(40px);
+  transform: translateX(-100px) rotate(-5deg);
+}
+
+.social-link:nth-child(2) {
+  transform: translateY(100px) rotate(0deg);
+}
+
+.social-link:nth-child(3) {
+  transform: translateX(100px) rotate(5deg);
 }
 
 .social-link.visible {
   opacity: 1;
-  transform: translateY(0);
-  transition: opacity 0.6s cubic-bezier(0.4, 0.2, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transform: translate(0) rotate(0);
+  transition: opacity 0.8s cubic-bezier(0.4, 0.2, 0.2, 1), 
+              transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1);
 }
 
 .social-link:nth-child(1) { transition-delay: 0.1s; }
@@ -640,7 +649,7 @@ body::before {
 .social-link:nth-child(3) { transition-delay: 0.3s; }
 
 .social-link:hover {
-  transform: translateY(-10px);
+  transform: translateY(-10px) scale(1.02);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
