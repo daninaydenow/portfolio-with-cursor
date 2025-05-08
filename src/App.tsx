@@ -1,8 +1,28 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './App.css';
 import TechStack from './components/TechStack';
 
 const App: React.FC = () => {
+  const skillsTitleRef = useRef<HTMLHeadingElement>(null);
+  const [skillsTitleVisible, setSkillsTitleVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new window.IntersectionObserver(
+      ([entry]) => {
+        setSkillsTitleVisible(entry.isIntersecting);
+      },
+      { threshold: 0.5 }
+    );
+    if (skillsTitleRef.current) {
+      observer.observe(skillsTitleRef.current);
+    }
+    return () => {
+      if (skillsTitleRef.current) {
+        observer.unobserve(skillsTitleRef.current);
+      }
+    };
+  }, []);
+
   return (
     <div className="App">
       <nav className="navbar">
@@ -27,6 +47,49 @@ const App: React.FC = () => {
             <h1>Daniel Naydenov</h1>
             <p>A Senior FrontEnd Developer with a passion for style. I would love to help you build your next project. Checkout my portfolio and let's talk!</p>
           </div>
+        </div>
+      </section>
+
+      <section className="skills-section" id="skills">
+        <div className="skills-content">
+          <h2 ref={skillsTitleRef} className={`skills-title${skillsTitleVisible ? ' visible' : ''}`}>Checkout my awesome skills!</h2>
+          <ul className="skills-list">
+            <li className="skill-item">
+              <span className="skill-icon"><img src="/Angular.svg" alt="Angular" /></span>
+              <div>
+                <h3>Angular</h3>
+                <p>3 years of professional experience with version ranging from 7 to 17. Legacy or latest - I got you covered.</p>
+              </div>
+            </li>
+            <li className="skill-item">
+              <span className="skill-icon"><img src="/material.png" alt="Angular Material" style={{width: '28px', height: '28px'}} /></span>
+              <div>
+                <h3>Angular Material</h3>
+                <p>Angular's best friend. Same versioning range - 3 years of experience.</p>
+              </div>
+            </li>
+            <li className="skill-item">
+              <span className="skill-icon"><img src="/rxjs.svg" alt="RxJs" style={{width: '28px', height: '28px'}} /></span>
+              <div>
+                <h3>RxJs</h3>
+                <p>The power of reactivity, in the palms of your hands - 3 years of experience.</p>
+              </div>
+            </li>
+            <li className="skill-item">
+              <span className="skill-icon"><img src="/js.svg" alt="JS" style={{width: '28px', height: '28px'}} /><img src="/html-5.svg" alt="HTML" style={{width: '28px', height: '28px', marginLeft: '4px'}} /><img src="/css-3.svg" alt="CSS" style={{width: '28px', height: '28px', marginLeft: '4px'}} /></span>
+              <div>
+                <h3>JS, HTML, CSS</h3>
+                <p>It goes without saying, web's holly trinity - 4 years of experience.</p>
+              </div>
+            </li>
+            <li className="skill-item">
+              <span className="skill-icon"><img src="/git.svg" alt="Git" style={{width: '28px', height: '28px'}} /><img src="/jira.svg" alt="Jira" style={{width: '28px', height: '28px', marginLeft: '4px'}} /></span>
+              <div>
+                <h3>Git and Github/Bitbucket</h3>
+                <p>No version will remain uncontrolled - 4 years of experience.</p>
+              </div>
+            </li>
+          </ul>
         </div>
       </section>
     </div>
