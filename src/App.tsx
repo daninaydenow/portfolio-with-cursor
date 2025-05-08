@@ -130,6 +130,13 @@ const App: React.FC = () => {
                 <p>No version will remain uncontrolled - 4 years of experience.</p>
               </div>
             </li>
+            <li className="skill-item">
+              <span className="skill-icon"><img src="/react.svg" alt="React" style={{width: '28px', height: '28px'}} /></span>
+              <div>
+                <h3>React</h3>
+                <p>React - 3 years of react experience.<br/>This portfolio was built using react.</p>
+              </div>
+            </li>
           </ul>
         </div>
       </section>
