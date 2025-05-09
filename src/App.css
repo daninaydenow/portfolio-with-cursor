@@ -709,3 +709,30 @@ body::before {
     max-width: 400px;
   }
 }
+
+/* Remove previous mobile padding changes */
+@media (max-width: 600px) {
+  .App,
+  .landing-content,
+  .skills-section,
+  .skills-content,
+  .contact-content {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+html, body {
+  overflow-x: hidden !important;
+}
+
+@media (max-width: 600px) {
+  .App,
+  .landing-content,
+  .skills-section,
+  .skills-content,
+  .contact-content {
+    max-width: 100vw;
+    box-sizing: border-box;
+  }
+}
