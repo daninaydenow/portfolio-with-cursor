@@ -163,7 +163,7 @@ const App: React.FC = () => {
         <div className="landing-content">
           <div className={`avatar-container${showAvatar ? ' avatar-visible' : ''}`}>
             <img 
-              src="/dani.jpg" 
+              src="/dani.png" 
               alt="Dani's portrait" 
               className="avatar-image"
             />
