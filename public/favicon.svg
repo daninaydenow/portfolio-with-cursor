@@ -4,10 +4,6 @@
   <path d="M16 2L4 8v8c0 6.6 5.4 12 12 12s12-5.4 12-12V8L16 2z" fill="#DD0031"/>
   <!-- Shield border -->
   <path d="M16 2L4 8v8c0 6.6 5.4 12 12 12s12-5.4 12-12V8L16 2z" stroke="#FFD700" stroke-width="1.5"/>
-  <!-- Yellow diamond -->
-  <path d="M16 6L8 16l8 10 8-10-8-10z" fill="#FFD700"/>
-  <!-- Red diamond -->
-  <path d="M16 8L10 16l6 8 6-8-6-8z" fill="#DD0031"/>
   <!-- DN initials -->
-  <text x="16" y="18" font-family="Arial, sans-serif" font-size="10" font-weight="900" fill="#FFD700" text-anchor="middle" dominant-baseline="middle" style="text-rendering: optimizeLegibility;">DN</text>
-</svg> 
+  <text x="16" y="17" font-family="Arial, sans-serif" font-size="12" font-weight="900" fill="#FFD700" text-anchor="middle" dominant-baseline="middle" style="text-rendering: optimizeLegibility;">DN</text>
+</svg>
