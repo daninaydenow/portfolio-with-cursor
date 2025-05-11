@@ -182,7 +182,7 @@ const App: React.FC = () => {
           <ul className="skills-list">
             <li className={`skill-item${cardVisible[0] ? ' visible' : ''}`} ref={el => { cardRefs.current[0] = el; }}>
               <a href="https://angular.dev" target="_blank" rel="noopener noreferrer" className="skill-link">
-                <span className="skill-icon"><img src="/Angular.svg" alt="Angular" /></span>
+                <span className="skill-icon"><img src="/angular.svg" alt="Angular" /></span>
               </a>
               <div>
                 <h3>Angular</h3>

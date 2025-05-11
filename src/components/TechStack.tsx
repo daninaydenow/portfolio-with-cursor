@@ -4,7 +4,7 @@ const TechStack: React.FC = () => {
   return (
     <div className="tech-stack">
       <img 
-        src="/Angular.svg" 
+        src="/angular.svg" 
         alt="Angular" 
         className="tech-icon angular"
       />
