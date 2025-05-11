@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './App.css';
 import TechStack from './components/TechStack';
+import Chatbot from './components/Chatbot';
 
 const App: React.FC = () => {
   const skillsTitleRef = useRef<HTMLHeadingElement>(null);
@@ -13,21 +14,24 @@ const App: React.FC = () => {
   const [cardVisible, setCardVisible] = useState(Array(9).fill(false));
   const socialLinkRefs = useRef<(HTMLAnchorElement | null)[]>([]);
   const [socialLinksVisible, setSocialLinksVisible] = useState(Array(3).fill(false));
+  const contactTitleRef = useRef<HTMLHeadingElement>(null);
+  const [contactTitleVisible, setContactTitleVisible] = useState(false);
 
   // Animate skills title
   useEffect(() => {
+    const ref = skillsTitleRef.current;
     const observer = new window.IntersectionObserver(
       ([entry]) => {
         setSkillsTitleVisible(entry.isIntersecting);
       },
       { threshold: 0.5 }
     );
-    if (skillsTitleRef.current) {
-      observer.observe(skillsTitleRef.current);
+    if (ref) {
+      observer.observe(ref);
     }
     return () => {
-      if (skillsTitleRef.current) {
-        observer.unobserve(skillsTitleRef.current);
+      if (ref) {
+        observer.unobserve(ref);
       }
     };
   }, []);
@@ -40,10 +44,11 @@ const App: React.FC = () => {
 
   // Animate social links on scroll
   useEffect(() => {
+    const refs = [...socialLinkRefs.current];
     const observer = new window.IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          const index = socialLinkRefs.current.findIndex(ref => ref === entry.target);
+          const index = refs.findIndex(ref => ref === entry.target);
           if (index !== -1) {
             setSocialLinksVisible(prev => {
               const updated = [...prev];
@@ -56,12 +61,12 @@ const App: React.FC = () => {
       { threshold: 0.2 }
     );
 
-    socialLinkRefs.current.forEach(ref => {
+    refs.forEach(ref => {
       if (ref) observer.observe(ref);
     });
 
     return () => {
-      socialLinkRefs.current.forEach(ref => {
+      refs.forEach(ref => {
         if (ref) observer.unobserve(ref);
       });
     };
@@ -101,8 +106,9 @@ const App: React.FC = () => {
 
   // Animate skill cards on scroll
   useEffect(() => {
+    const refs = [...cardRefs.current];
     const observers: IntersectionObserver[] = [];
-    cardRefs.current.forEach((ref, i) => {
+    refs.forEach((ref, i) => {
       if (!ref) return;
       const observer = new window.IntersectionObserver(
         ([entry]) => {
@@ -119,8 +125,27 @@ const App: React.FC = () => {
     });
     return () => {
       observers.forEach((observer, i) => {
-        if (cardRefs.current[i]) observer.unobserve(cardRefs.current[i]!);
+        if (refs[i]) observer.unobserve(refs[i]!);
       });
+    };
+  }, []);
+
+  // Animate contact title on scroll
+  useEffect(() => {
+    const ref = contactTitleRef.current;
+    const observer = new window.IntersectionObserver(
+      ([entry]) => {
+        setContactTitleVisible(entry.isIntersecting);
+      },
+      { threshold: 0.5 }
+    );
+    if (ref) {
+      observer.observe(ref);
+    }
+    return () => {
+      if (ref) {
+        observer.unobserve(ref);
+      }
     };
   }, []);
 
@@ -242,7 +267,7 @@ const App: React.FC = () => {
 
       <section className="contact-section" id="contact" ref={contactRef}>
         <div className="contact-content">
-          <h2 className="contact-title">Let's Connect!</h2>
+          <h2 ref={contactTitleRef} className={`contact-title${contactTitleVisible ? ' visible' : ''}`}>Let's Connect!</h2>
           <div className="social-links">
             <a 
               href="https://github.com/daninaydenow" 
@@ -286,6 +311,9 @@ const App: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* AI Chatbot */}
+      <Chatbot />
     </div>
   );
 };
